@@ -1,0 +1,38 @@
+{
+  "name": "vket-boilerplate-nuxt",
+  "private": true,
+  "version": "1.0.1",
+  "license": "MIT",
+  "packageManager": "bun@1.2.23",
+  "workspaces": [
+    "layers/*"
+  ],
+  "scripts": {
+    "update-project": "bun update && bun clean-install",
+    "clean-install": "node ./scripts/clean_install.js",
+    "allclean-install": "node ./scripts/clean_install.js all",
+    "prepare": "bun husky",
+    "package-update": "bunx npm-check-updates -i",
+    "repomix": "./scripts/generate_context.sh",
+    "typecheck": "bun run --recursive --filter './layers/*' --filter '!**/node_modules/**' --if-present typecheck",
+    "test:ut": "bun run --recursive --filter './layers/*' --filter '!**/node_modules/**' --if-present test:ut",
+    "fix": "bun run --recursive --filter './layers/*' --filter '!**/node_modules/**' --if-present fix",
+    "build:local": "bun run --recursive --filter './layers/*' --filter '!**/node_modules/**' --if-present build:local"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.23",
+    "bun-types": "^1.2.23",
+    "eslint": "^9.37.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.3",
+    "stylelint": "^16.25.0"
+  },
+  "lint-staged": {
+    "layers/**/*.+(js|ts|tsx|vue)": [
+      "eslint --cache --cache-strategy content"
+    ]
+  },
+  "resolutions": {
+    "eslint": "9.37.0"
+  }
+}

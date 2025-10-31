@@ -1,0 +1,9 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`mount component 1`] = `
+"<div data-v-01e8812b="" class="ha-select-box"><select data-v-01e8812b="" name="" class="select">
+    <option data-v-01e8812b="">---Select---</option>
+  </select>
+  <!--v-if-->
+</div>"
+`;
