@@ -1,10 +1,6 @@
 #!/bin/sh
-
-# Bunのパスを明示的に追加
-export PATH="/home/eita/.nodebrew/current/bin:$PATH"
-
 bunx lint-staged
-bunx repomix
+bun run repomix
 
 # agent_contexts/ 以下のファイルが変更されていれば自動的にステージングする
 if [ -d "agent_contexts" ]; then
